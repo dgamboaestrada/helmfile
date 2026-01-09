@@ -1,6 +1,8 @@
 repositories:
  - name: prometheus-community
    url: https://prometheus-community.github.io/helm-charts
+ - name: djjudas21
+   url: https://djjudas21.github.io/charts/
 
 helmDefaults:
   kubeContext: asus
@@ -12,4 +14,11 @@ releases:
   set:
   - name: rbac.create
     value: false
+  installed: true
+
+- name: homer
+  namespace: homer
+  chart: djjudas21/homer
+  values:
+  - values/homer.yaml
   installed: true
